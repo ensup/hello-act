@@ -1,6 +1,6 @@
 # .github/workflows/build.yml
 
-name: Build
+name: c-cpp
 on:
   push:
     branches: [main]
