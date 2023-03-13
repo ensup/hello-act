@@ -1,4 +1,4 @@
 # hello-act
-[![Build status](https://github.com/ensup/hello-act/workflows/C/C++%20CI/badge.svg)](https://github.com/ensup/hello-act/actions?query=workflow%3A%22C%2FC%2B%2B+CI%22)
+[![Windows-Build](https://github.com/ensup/hello-act/actions/workflows/windows.yml/badge.svg)](https://github.com/ensup/hello-act/actions/workflows/windows.yml)
 </br>
 This is a test repository for github action CI
