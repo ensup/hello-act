@@ -23,27 +23,10 @@ jobs:
       - name: Build with Clang
         run: |
           mkdir build && cd build
-          clang ../main.c -o my_app.exe
-#          cmake -G "Ninja" -DCMAKE_C_COMPILER=clang.exe -DCMAKE_CXX_COMPILER=clang++.exe ..
-#          cmake --build .
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          cmake -G "Ninja" -DCMAKE_C_COMPILER=clang.exe -DCMAKE_CXX_COMPILER=clang++.exe ..
+          cmake --build .
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
         with:
-          tag_name: v1.0.0
-          release_name: Release 1.0.0
-          body: |
-            Description of the release.
-          draft: false
-          prerelease: false
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/my_app.exe
-          asset_name: my_app.exe
-          asset_content_type: application/octet-stream
+          name: my_app
+          path: ./build/my_app.exe
