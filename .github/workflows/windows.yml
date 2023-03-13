@@ -23,7 +23,7 @@ jobs:
       - name: Build with Clang
         run: |
           mkdir build && cd build
-          clang ../main.c
+          clang ../main.c -o my_app.exe
 #          cmake -G "Ninja" -DCMAKE_C_COMPILER=clang.exe -DCMAKE_CXX_COMPILER=clang++.exe ..
 #          cmake --build .
       - name: Create Release
